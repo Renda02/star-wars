@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
 import NavBar from "./components/NavBar";
-import Main from "./components/Main"
+import Main from "./components/Main";
 
 function App() {
   const [people, setPeople] = useState([]);
@@ -12,30 +13,32 @@ function App() {
       let res = await fetch("http://swapi.dev/api/people/");
       let data = await res.json();
       setPeople(data.results);
-      setNext(data.next)
+      setNext(data.next);
     }
     fetchPeople();
   }, []);
 
-
-  async function onClick(event){
-    event.preventDefault()
+  async function onClick(event) {
+    event.preventDefault();
     let res = await fetch(next);
     let data = await res.json();
-    setPeople([
-      ...people,
-      ...data.results
-    ]);
+    setPeople([...people, ...data.results]);
     // updates the next page
-    setNext(data.next)
+    setNext(data.next);
   }
 
   console.log("data", people);
   return (
-    <div>
+    <Router>
       <NavBar />
-      <Main data={people} onClick={onClick}/>
-    </div>
+      <Switch>
+        {" "}
+        <Route path="/">
+          {" "}
+          <Main data={people} onClick={onClick} />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

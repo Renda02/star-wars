@@ -1,4 +1,48 @@
-.main__content{
-   margin: 0 auto;
-   
+.main {
+  padding: 20px;
+  color: #f1f1f1;
+  margin: 0 auto;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 920px) {
+   .row{
+      display: grid;
+      grid-template-columns: 300px;
+      grid-gap: 10px;
+   }
+}
+
+.cards {
+  border: 2px solid #f1f1f1;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em;
+}
+
+.button {
+  border-radius: 5px;
+  padding: 1em 2.2em;
+  background: #fde44d;
+  color: #000;
+  cursor: pointer;
+}
+
+.button:hover{
+   background: #f1f1f1;
 }

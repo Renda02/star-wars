@@ -7,19 +7,19 @@ function App() {
   const [people, setPeople] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
-      let res = await fetch("http://swapi.dev/api/people/?format=json");
+    async function fetchPeople() {
+      let res = await fetch("http://swapi.dev/api/people/");
       let data = await res.json();
       setPeople(data.results);
     }
-    fetchData();
+    fetchPeople();
   }, []);
 
   console.log("data", people);
   return (
     <div>
       <NavBar />
-      <Main people={people}/>
+      <Main data={people}/>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import "./NavBar.css"
 function NavBar() {
     return (
         <div className="nav">
-            <div className="content">   <h1>The Star Wars Characters</h1></div>
+            <div className="content">   <h2>The Star Wars Characters</h2></div>
         </div>
     )
 }

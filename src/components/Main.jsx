@@ -1,7 +1,7 @@
 //import React, { useState } from "react";
 import "./Main.css";
 
-function Main({ data }) {
+function Main({ data, onClick }) {
 
 
   return (
@@ -19,7 +19,7 @@ function Main({ data }) {
         })}
       </div>
       <div className="btn">
-        <button className="button">Load More</button>
+        <button className="button" onClick={onClick}>Load More</button>
       </div>
     </div>
   );

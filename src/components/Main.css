@@ -28,6 +28,10 @@
   align-items: center;
 }
 
+ul{
+  list-style: none;
+}
+
 .btn {
   display: flex;
   justify-content: center;

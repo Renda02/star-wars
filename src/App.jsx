@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Main from "./components/Main";
+import CharacterPage from "./components/CharacterPage";
 
 function App() {
   const [people, setPeople] = useState([]);
@@ -33,6 +34,9 @@ function App() {
       <NavBar />
       <Switch>
         {" "}
+        <Route path={`/characters/:characterId`}>< CharacterPage/></Route>
+          
+      
         <Route path="/">
           {" "}
           <Main data={people} onClick={onClick} />

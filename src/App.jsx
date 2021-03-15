@@ -28,15 +28,15 @@ function App() {
     setNext(data.next);
   }
 
-  console.log("data", people);
+  //console.log("data", people);
   return (
     <Router>
       <NavBar />
       <Switch>
         {" "}
-        <Route path={`/characters/:characterId`}>< CharacterPage/></Route>
-          
-      
+        <Route path={`/characters/:characterId`}>
+          <CharacterPage />
+        </Route>
         <Route path="/">
           {" "}
           <Main data={people} onClick={onClick} />

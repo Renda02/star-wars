@@ -1,5 +1,5 @@
 .main {
-  padding: 20px;
+  padding: 40px 20px;
   color: #f1f1f1;
   margin: 0 auto;
 }
@@ -20,19 +20,44 @@
    }
 }
 
+h2{
+  color:#fde44d;
+  text-decoration: none;
+}
+
 
 
 .cards {
-  border: 2px solid #f1f1f1;
-  border-radius: 5px;
+  
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
+background: rgba(225, 225, 225, 0.05);
+box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+border-top:rgba(255, 255,255, 0.2);
+border-left:rgba(255, 255,255, 0.2);
+backdrop-filter: blur(5px);
 }
+
+
 
 ul{
   list-style: none;
 }
+
+li{
+  display: inline;
+ padding:0 auto;
+ font-size: 1.2rem;
+}
+
+.list_birth{
+  margin-left: 15px;
+}
+
+
 
 .btn {
   display: flex;

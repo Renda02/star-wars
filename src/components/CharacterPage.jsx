@@ -27,17 +27,24 @@ function CharacterPage() {
   }, []);
 
   return (
-    <div>
+    <div className="wrap">
       <div className="icons">
         <Link to="/">
           <BsArrowLeft fill="#FDE44D" size={40} />
         </Link>
-      </div>
+      </div >
       <h1>{character.name}</h1>
-      <ul>
-        <li>Height:{character.height}</li>
-        <li>Mass:{character.mass}</li>
-      </ul>
+      <div className="character__info"> <ul>
+        <li>Height:<span>{character.height}</span></li>
+        <li>Gender:<span>{character.gender}</span></li>
+        <li>Mass:<span>{character.mass}</span>kg </li>
+        <li>Hair color:<span>{character.hair_color}</span></li>
+        <li>Eye color:<span>{character.eye_color}</span></li>
+        <li>Birth year:<span>{character.mass}</span></li>
+      </ul></div>
+<div>
+  <h2>{character.count}Films</h2>
+</div>
     </div>
   );
 }

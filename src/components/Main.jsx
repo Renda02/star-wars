@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Main.css";
 
 function Main({ data, onClick }) {
-  //const id = "http://swapi.dev/api/people/3/".split("/")[5] ;
+
   return (
     <div className="main">
       {" "}
@@ -13,18 +13,20 @@ function Main({ data, onClick }) {
           const id = people.url.split("/")[5];
           return (
             <div className="cards" key={i}>
+              
               <Link to={`characters/${id}`}>
                 <h2>{people.name}</h2>
               </Link>
-
+<div className="details">
               <ul>
                 <li>
-                  <span>{people.films_name}</span> Films
+                  <span>{people.films.title}</span> Films
                 </li>
-                <li>
+                <li className="list_birth">
                   birth year:<span>{people.birth_year}</span>
                 </li>
               </ul>
+              </div>
             </div>
           );
         })}

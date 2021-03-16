@@ -32,19 +32,38 @@ function CharacterPage() {
         <Link to="/">
           <BsArrowLeft fill="#FDE44D" size={40} />
         </Link>
-      </div >
-      <h1>{character.name}</h1>
-      <div className="character__info"> <ul>
-        <li>Height:<span>{character.height}</span></li>
-        <li>Gender:<span>{character.gender}</span></li>
-        <li>Mass:<span>{character.mass}</span>kg </li>
-        <li>Hair color:<span>{character.hair_color}</span></li>
-        <li>Eye color:<span>{character.eye_color}</span></li>
-        <li>Birth year:<span>{character.mass}</span></li>
-      </ul></div>
-<div>
-  <h2>{character.count}Films</h2>
-</div>
+      </div>
+      <div className="info">
+        {" "}
+        <h1>{character.name}</h1>
+        <div className="character__info">
+          {" "}
+          <ul>
+            <li>
+              Height:<span>{character.height}</span>
+            </li>
+            <li>
+              Gender:<span>{character.gender}</span>
+            </li>
+            <li>
+              Mass:<span>{character.mass}</span>kg{" "}
+            </li>
+            <li>
+              Hair color:<span>{character.hair_color}</span>
+            </li>
+            <li>
+              Eye color:<span>{character.eye_color}</span>
+            </li>
+            <li>
+              Birth year:<span>{character.mass}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h2>films</h2>
+      </div>
     </div>
   );
 }

@@ -107,12 +107,12 @@ const Heading = styled.h1`
 const CharacterListWrapper = styled.ul` display: flex;
 list-style: none;
 text-align: center;
-align items:flex-start;
+align-items:flex-start;
 flex-wrap: wrap;
 justify-content: space-between;
 
 @media (max-width: 920px) {
-  flex-direction:column;
+  flex-direction:column}
 
 `;
 

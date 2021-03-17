@@ -1,3 +1,18 @@
+# Star Wars
+This a webapp which displays characters within the The Star Wars universe which I used [SWAPI: The Stars Wars API](https://swapi.dev/) to fetch the data required.
+
+
+## Details of the app
+
+* To create the app I implemented React app as main ui.
+* To fetch data required for the webapp I used React hooks `{useState, useEffect } ` following [React documentation](https://reactjs.org/docs/hooks-reference.html#useeffect) .
+* I then `props` to pass the data through the components and `map()` to build new element.
+* To navigate to character from inside the component I used  `{React Router}`using [react-router-dom]() depedency and I also used `{useParams}` to match and diplay character details.
+* To add icon I used [React Icons](https://react-icons.github.io/react-icons/) dependency.
+*  To make the components readadle and to keep my styling in control I added [styled components](https://styled-components.com/) dependency.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

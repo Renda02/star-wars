@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { Container } from "../globalStyles";
-import "./Main.css";
+
 
 function Main({ data, onClick }) {
-
   return (
     <Container>
       {" "}
@@ -20,15 +19,13 @@ function Main({ data, onClick }) {
                 <Heading>{people.name}</Heading>
               </StyledLink>
               <div className="details">
-                <ul>
-                  <li>
-                    <span> {people.films.length} Films</span>
-                  </li>
+                <LinkWrapper>
+                  <List>{people.films.length} Films</List>
 
-                  <li className="list_birth">
+                  <List>
                     birth year:<span>{people.birth_year}</span>
-                  </li>
-                </ul>
+                  </List>
+                </LinkWrapper>
               </div>
             </Cards>
           );
@@ -51,13 +48,11 @@ const Row = styled.div`
   align-items: center;
 
   @media (max-width: 920px) {
-   
-      display: grid;
-      grid-template-columns: 300px;
-      grid-gap: 10px;
-   }
+    display: grid;
+    grid-template-columns: 300px;
+    grid-gap: 10px;
+  }
 `;
-
 
 const Cards = styled.div`
   border-radius: 15px;
@@ -65,7 +60,7 @@ const Cards = styled.div`
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  background: rgba(61, 67,72,0.5);
+  background: rgba(61, 67, 72, 0.5);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   border-top: rgba(255, 255, 255, 0.2);
   border-left: rgba(255, 255, 255, 0.2);
@@ -73,15 +68,35 @@ const Cards = styled.div`
 `;
 
 const StyledLink = styled(Link)`
-    text-underline-position: under;
-    
+  text-underline-position: under;
 
-    &:focus, &:hover, &:visited, &:link, &:active {
-        text-decoration: underline solid #fde44d;
-    }
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: underline solid #fde44d;
+  }
 `;
 
-const Heading=styled.h2` color:#fde44d;`;
+const Heading = styled.h2`
+  font-size: 1.5rem;
+  color: #fde44d;
+`;
+
+const LinkWrapper = styled.ul`
+  list-style: none;
+  display: flex;
+`;
+
+const List = styled.li`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  font-weight: 600;
+  
+`;
 
 const ButtonWrapper = styled.div`
   display: flex;

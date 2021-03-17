@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import "./CharacterPage.css";
+
+
 
 function MovieLink({ link }) {
   const [movie, setMovie] = useState({});
@@ -24,9 +25,12 @@ function MovieLink({ link }) {
   }, [link]);
   console.log(movie, "movie")
   return (
+      
+
     <li>
       - {movie.title}: {new Date().getFullYear() - new Date(movie.release_date).getFullYear() + " years ago"}
     </li>
+   
   );
 }
 

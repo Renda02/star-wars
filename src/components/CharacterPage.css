@@ -8,10 +8,10 @@ h1 {
 }
 
 .character__info {
-margin: 0 2em;
+  margin: 0 2em;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+
   overflow: hidden;
   background: rgba(225, 225, 225, 0.05);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -20,19 +20,33 @@ margin: 0 2em;
   backdrop-filter: blur(5px);
 }
 
-.ul {
+.character__info > ul {
   display: flex;
   list-style: none;
   text-align: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-li {
+.character__info > ul > li {
   justify-content: center;
   align-items: center;
   display: flex;
-  margin: 2em;
+  margin: 1em;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 h2 {
   text-align: center;
+}
+
+.films__info {
+  margin: 10px;
+}
+
+.films {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }

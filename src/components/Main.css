@@ -1,8 +1,4 @@
-.main {
-  padding: 40px 20px;
-  color: #f1f1f1;
-  margin: 0 auto;
-}
+
 
 .row {
   display: grid;
@@ -24,8 +20,6 @@ h2{
   color:#fde44d;
   text-decoration: none;
 }
-
-
 
 .cards {
   
@@ -53,27 +47,8 @@ li{
  font-size: 1.2rem;
 }
 
-.list_birth{
-  margin-left: 5px;
-}
 
 
 
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2em;
-}
 
-.button {
-  border-radius: 5px;
-  padding: 1em 2.2em;
-  background: #fde44d;
-  color: #000;
-  cursor: pointer;
-}
 
-.button:hover{
-   background: #f1f1f1;
-}

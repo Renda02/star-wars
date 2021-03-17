@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React,  {useState, useEffect ,Fragment} from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.css";
+
+
+import GlobalStyle from "./globalStyles.js";
 import NavBar from "./components/NavBar";
 import Main from "./components/Main";
 import CharacterPage from "./components/CharacterPage";
+
 
 function App() {
   const [people, setPeople] = useState([]);
@@ -29,20 +32,22 @@ function App() {
   }
 
   //console.log("data", people);
-  return (
+  return (<Fragment>
     <Router>
+      <GlobalStyle />
       <NavBar />
       <Switch>
         {" "}
         <Route path={`/characters/:characterId`}>
-          <CharacterPage />
+          <CharacterPage data={people} />
         </Route>
         <Route path="/">
           {" "}
           <Main data={people} onClick={onClick} />
         </Route>
       </Switch>
-    </Router>
+    </Router></Fragment>
+  
   );
 }
 

@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
+import MovieLink from "./MovieLink";
 import "./CharacterPage.css";
+import styled from "styled-components";
 
-function CharacterPage() {
+function CharacterPage({ data }) {
   const [character, setCharacter] = useState({});
 
   let { characterId } = useParams();
-
+  console.log(character);
   useEffect(() => {
     async function fetchData() {
       // 1. get the data
@@ -24,7 +26,7 @@ function CharacterPage() {
     fetchData();
     // fetch data
     // set the events
-  }, []);
+  }, [characterId]);
 
   return (
     <div className="wrap">
@@ -62,10 +64,33 @@ function CharacterPage() {
       </div>
 
       <div>
-        <h2>films</h2>
+        <div className="films__info">
+          <Title>
+            {/*{data.reduce((sum, character) => sum + character.films.length, 0)}*/}
+            {character.films && character.films.length} Films
+          </Title>
+          <MovieList>
+            {character.films &&
+              character.films.map((filmLink) => <MovieLink link={filmLink} />)}
+          </MovieList>
+        </div>
       </div>
     </div>
   );
 }
 
 export default CharacterPage;
+
+const MovieList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  text-align: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+`;
+
+const Title = styled.h2`
+  text-align: left;
+  padding:2rem;
+`;

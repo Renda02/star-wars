@@ -10,7 +10,7 @@ function CharacterPage({ data }) {
   const [character, setCharacter] = useState({});
 
   let { characterId } = useParams();
-  console.log(character);
+  
   useEffect(() => {
     async function fetchData() {
       // 1. get the data

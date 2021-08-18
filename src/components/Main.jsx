@@ -15,8 +15,8 @@ function Main({ data, onClick }) {
           const id = people.url.split("/")[5];
           return (
             <Cards key={i}>
-              <StyledLink to={`characters/${id}`} >
-                <Heading data-testid={`name-${id}`}>{people.name}</Heading>
+              <StyledLink to={`characters/${id}`} key={people.id} data-cy={`link-character-${id}`} >
+                <Heading data-testid={`name-${id}`} data-cy={"load-more-info"}>{people.name}</Heading>
               </StyledLink>
               <div className="details">
                 <LinkWrapper>
@@ -32,7 +32,7 @@ function Main({ data, onClick }) {
         })}
       </Row>
       <ButtonWrapper>
-        <Button onClick={onClick}>Load More</Button>
+        <Button onClick={onClick} data-cy={"load-more-button"}>Load More</Button>
       </ButtonWrapper>
     </Container>
   );

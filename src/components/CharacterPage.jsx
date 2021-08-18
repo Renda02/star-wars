@@ -32,7 +32,7 @@ function CharacterPage({ data }) {
   return (
     <Container>
       <Icon>
-        <Link to="/">
+        <Link to="/" data-cy={"load-home-info"}>
           <BsArrowLeft fill="#FDE44D" size={50} />
         </Link>
       </Icon>

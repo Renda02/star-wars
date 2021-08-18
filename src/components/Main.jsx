@@ -15,8 +15,8 @@ function Main({ data, onClick }) {
           const id = people.url.split("/")[5];
           return (
             <Cards key={i}>
-              <StyledLink to={`characters/${id}`}>
-                <Heading>{people.name}</Heading>
+              <StyledLink to={`characters/${id}`} >
+                <Heading data-testid={`name-${id}`}>{people.name}</Heading>
               </StyledLink>
               <div className="details">
                 <LinkWrapper>

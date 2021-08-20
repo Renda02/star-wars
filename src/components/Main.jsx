@@ -16,7 +16,7 @@ function Main({ data, onClick }) {
           return (
             <Cards key={i}>
               <StyledLink to={`characters/${id}`} key={people.id} data-cy={`link-character-${id}`} >
-                <Heading data-testid={`name-${id}`} data-cy={"load-more-info"}>{people.name}</Heading>
+                <h2 data-testid={`name-${id}`} data-cy={"load-more-info"}>{people.name}</h2>
               </StyledLink>
               <div className="details">
                 <LinkWrapper>

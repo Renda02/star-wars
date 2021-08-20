@@ -32,8 +32,8 @@ function CharacterPage({ data }) {
   return (
     <Container>
       <Icon>
-        <Link to="/" data-cy={"go-back-homepage"}>
-          <BsArrowLeft fill="#FDE44D" size={50} />
+        <Link to="/">
+          <BsArrowLeft fill="#FDE44D" size={50} data-cy={"go-back-homepage" }/>
         </Link>
       </Icon>
       <div className="info">

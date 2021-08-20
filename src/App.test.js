@@ -7,20 +7,22 @@ import { setupServer } from "msw/node";
 import { render,  waitFor, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Main from "./components/Main";
+import App from "./App";
 
 const server = setupServer(
-  rest.get("/http://localhost:3004/", (req, res, ctx) => {
+  rest.get("http://swapi.dev/api/people/", (req, res, ctx) => {
     return res(
-      ctx.json({
-        greeting: [
-          {
+      ctx.json(
+    { results: [
+          { url: "https://swapi.dev/api/people/1/",
             name: "Luke Skywalker",
             height: "172",
             birth_year: "19BBY",
-            id: "1",
+            films:[],
+         
           },
-        ],
-      })
+        ]} ,
+      )
     );
   })
 );
@@ -30,7 +32,7 @@ afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
 test("loads and displays greeting", async () => {
-  render(<Router><Main  /></Router>);
+  render(<App  />);
 
   await waitFor(() => screen.getByTestId("name-1"));
 
